@@ -8,8 +8,9 @@ class MinidspRs < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "build", "--bin", "minidsp", "--release"
-    bin.install "target/release/minidsp"
+    cd "minidsp" do
+      system "cargo", "install", "minidsp", *std_cargo_args
+    end
   end
 
   test do
