@@ -11,6 +11,10 @@ cask "insta360-link" do
     pkg "Insta360 Link Controller_#{version}_155611_signed.pkg"
   #  app ""
   
+  uninstall quit:    "com.insta360.link",
+            pkgutil: [
+              "com.insta360.insta360Link",
+            ]
     # Documentation: https://docs.brew.sh/Cask-Cookbook#stanza-zap
   #  zap trash: ""
   end
